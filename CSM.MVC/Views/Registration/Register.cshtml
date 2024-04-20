@@ -1,0 +1,11 @@
+﻿
+<script>// JavaScript function to show popup message
+    function showMessage(message) {
+        alert(message);
+    }</script>
+
+<!-- Call the showMessage function with the message from ViewBag or ViewData -->
+<script>
+    showMessage('@ViewBag.PopupMessage');
+    // Or showMessage('@ViewData["PopupMessage"]');
+</script>

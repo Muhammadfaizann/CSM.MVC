@@ -1,0 +1,46 @@
+﻿
+@model Student
+
+<h2>Student Details</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <dl>
+            <dt>First Name:</dt>
+            <dd>@Model.FirstName</dd>
+            <dt>Surname:</dt>
+            <dd>@Model.Surname</dd>
+            <dt>Gender:</dt>
+            <dd>@Model.Gender</dd>
+            <dt>Date of Birth:</dt>
+            <dd>@Model.DOB</dd>
+            <dt>Address 1:</dt>
+            <dd>@Model.Address1</dd>
+            <dt>Address 2:</dt>
+            <dd>@Model.Address2</dd>
+            <dt>Address 3:</dt>
+            <dd>@Model.Address3</dd>
+        </dl>
+
+        <p>
+            <a asp-action="Index">Back to List</a>
+        </p>
+    </div>
+
+    <div class="col-md-6">
+        <h3>Registered Courses</h3>
+        @if (Model.Registrations.Any())
+        {
+            <ul>
+                @foreach (var registration in Model.Registrations)
+                {
+                    <li>@registration.CourseName</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No courses registered</p>
+        }
+    </div>
+</div>
